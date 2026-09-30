@@ -1,0 +1,101 @@
+/* Leaflet custom styles & ArogyaGrid GIS Map Theme */
+@import 'leaflet/dist/leaflet.css';
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f5f9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  border-radius: inherit;
+}
+
+/* Custom Marker Styling */
+.india-map-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.india-map-marker:hover {
+  transform: scale(1.22);
+  z-index: 1000 !important;
+}
+
+/* Pulsing radar ring */
+.pulse-beacon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-beacon::before {
+  content: '';
+  position: absolute;
+  width: 240%;
+  height: 240%;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.25);
+  border: 1.5px solid rgba(220, 38, 38, 0.6);
+  animation: radar-pulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Leaflet Popup Customization */
+.arogya-leaflet-popup .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(11, 18, 32, 0.15), 0 8px 10px -6px rgba(11, 18, 32, 0.08);
+  border: 1px solid #e2e8f0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.arogya-leaflet-popup .leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.arogya-leaflet-popup .leaflet-popup-tip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.arogya-leaflet-popup a.leaflet-popup-close-button {
+  top: 8px;
+  right: 8px;
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 2px;
+}
+
+.arogya-leaflet-popup a.leaflet-popup-close-button:hover {
+  color: #0b1220;
+}
+
+/* Vector State Hover Effects */
+.india-state-path {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.india-state-path:hover {
+  filter: drop-shadow(0 2px 8px rgba(11, 143, 106, 0.25));
+  stroke-width: 2.2px !important;
+}

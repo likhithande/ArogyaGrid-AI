@@ -1,0 +1,10 @@
+{
+  "name": "arogyagrid-ai",
+  "version": "2.4.0",
+  "description": "Federated Intelligence for Resilient Public Healthcare",
+  "scripts": {
+    "start": "python run.py",
+    "dev": "python run.py --dev",
+    "build": "cd frontend && npm run build"
+  }
+}
